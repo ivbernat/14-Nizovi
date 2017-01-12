@@ -8,6 +8,10 @@ namespace Vsite.CSharp
         {
             int zbroj = 0;
             // TODO: Napisati petlju koja će zbrojiti članove do [nPrviIndeks, nDrugiIndex] dvodimenzionalnog niza
+            for(int i = 0; i< nPrviIndeks; ++i)
+            { for (int j = 0; j < nDrugiIndex; ++j)
+                    zbroj += niz[i, j];
+                        }
             return zbroj;
         }
 
@@ -23,6 +27,15 @@ namespace Vsite.CSharp
             fixed (int* element = niz)
             {
                 int duljinaDrugeDimenzije = niz.GetLength(1);
+                for (int i = 0; i < nPrviIndeks; ++i)
+                {
+                    int* tekuci = element + i * duljinaDrugeDimenzije;
+                    for (int j = 0; j < duljinaDrugeDimenzije; ++j)
+                    {
+                        zbroj += *tekuci;
+                        ++tekuci;
+                    }
+                }
                 // TODO: Napisati petlju koja će zbrojiti članove do [nPrviIndeks, nDrugiIndex] dvodimenzionalnog niza
             }
             return zbroj;
