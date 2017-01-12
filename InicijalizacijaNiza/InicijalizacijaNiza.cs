@@ -21,14 +21,18 @@ namespace Vsite.CSharp
 
         public static void InicijalizacijaNizaVrijednosnogTipa()
         {
-            int[] nizBrojeva = null;  // deklaracija reference na niz
+            int[] nizBrojeva = new int[N];  // deklaracija reference na niz
 
             // TODO: nizBrojeva inicijalizirati kao niz duljine N u kojem su članovi neinicijalizirani
 
             IspisČlanova("Niz neinicijaliziranih objekata tipa", nizBrojeva);
 
             // TODO: Svakom pojedinom članu niza pridružiti vrijednost različite od nule. Pokrenuti program i provjeriti ispis.
+            nizBrojeva[0] = 12;
 
+            nizBrojeva[3] = 14;
+            nizBrojeva[2] = 5;
+            nizBrojeva[1] = 5;
             IspisČlanova("Niz inicijaliziranih objekata tipa", nizBrojeva);
         }
 
@@ -41,10 +45,10 @@ namespace Vsite.CSharp
             IspisČlanova("Niz neinicijaliziranih objekata tipa", nizKontrola);
 
             // TODO: Otkomentirati donje naredbe, pokrenuti program i provjeriti ispis.
-            //nizKontrola[0] = new Button();
-            //nizKontrola[1] = new Form();
-            //nizKontrola[2] = nizKontrola[0];
-            //nizKontrola[3] = new TextBox();
+            nizKontrola[0] = new Button();
+            nizKontrola[1] = new Form();
+            nizKontrola[2] = nizKontrola[0];
+            nizKontrola[3] = new TextBox();
 
             IspisČlanova("Niz inicijaliziranih objekata tipa", nizKontrola);
         }
